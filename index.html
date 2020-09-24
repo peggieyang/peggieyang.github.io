@@ -10,18 +10,41 @@
 <body>
     <div class="wrapper">
         <div class="sidebar">
+            <a href="#" class="menubtn">
+                <span></span>
+                <span></span>
+            </a>
             <h2 class="sidebartitle">HOLA</h2>
             <p>I'm Peggie</p>
             <ul>
                 <li><a href="#">123456</a><span></span> </li>
                 <li><a href="#">arqrwrr</a><span></span></li>
                 <li><a href="#">qqqqqqq</a><span></span></li>
-                <li><a href="#">你好</a><span></span></li>
+                <li><a href="#">你好喔</a><span></span></li>
             </ul>
         </div>
         <div class="content">
+            <h2>Hello ~</h2>
+            <section class="paper" style="height: 300px;">
 
+            </section>
+            <section class="paper" style="height: 300px;">
+
+            </section>
+            <section class="paper" style="height: 300px;">
+
+            </section>
+            <section class="paper" style="height: 300px;">
+
+            </section>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $('.menubtn').on('click', function(){
+            $('.sidebar').toggleClass('collapse');
+        });
+    </script>
 </body>
 </html>
