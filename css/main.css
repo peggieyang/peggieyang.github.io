@@ -40,16 +40,17 @@ ul {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b4dfe3",endColorstr="#f0ffe0",GradientType=1);
     background-size: 100% 100%;
     height: fit-content;
-    min-height: 100vh;
+    min-height: 100%;
     text-align: center;
-    padding: 20px 0;
+    overflow: auto;
 }
-.sidebar h2 {
+.sidebar .sidebartitle {
     color: var(--primarycolor);
     border-bottom: 3px solid var(--primarycolor);
     display: inline-block;
     height: 45px;
     font-size: 32px;
+    margin-top: 20px;
 }
 .sidebar p {
     color: #40a8a8;
