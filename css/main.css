@@ -1,8 +1,116 @@
+/* reset */
 body {
     margin: 0;
+    font-family: 'Baloo Tammudu 2', 'Noto Sans TC', sans-serif;
+    /* 'Noto Serif TC', */
+}
+h1, h2, h3, h4, h5, p {
+    margin: 0;
+}
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* universal */
+:root {
+    --sidebarwidth: 200px;
+    --sidebarbgcolor:#b4dfe3;
+    --bgcolor:#f2fafa;
+    --primarycolor: #48b2b2;
+    --linkcolor: #000;
 }
 .wrapper {
-    background: #f5f5f5;
+    background: var(--bgcolor);
     width: 100%;
     height: 100vh;
+    overflow: auto;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/* sidebar */
+.sidebar {
+    width: var(--sidebarwidth);
+    background: var(--sidebarbgcolor);
+    background: rgb(180,223,227);
+    background: -moz-linear-gradient(159deg, rgba(180,223,227,1) 0%, rgba(240,255,224,1) 100%);
+    background: -webkit-linear-gradient(159deg, rgba(180,223,227,1) 0%, rgba(240,255,224,1) 100%);
+    background: linear-gradient(159deg, rgba(180,223,227,1) 0%, rgba(240,255,224,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b4dfe3",endColorstr="#f0ffe0",GradientType=1);
+    background-size: 100% 100%;
+    height: fit-content;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px 0;
+}
+.sidebar h2 {
+    color: var(--primarycolor);
+    border-bottom: 3px solid var(--primarycolor);
+    display: inline-block;
+    height: 45px;
+    font-size: 32px;
+}
+.sidebar p {
+    color: #40a8a8;
+}
+.sidebar li a {
+    z-index: 2;
+    position: relative;
+    display: block;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: var(--linkcolor);
+    text-decoration: none;
+}
+.sidebar li {
+    padding-top: 8px;
+    position: relative;
+    transform-origin: right;
+    margin-bottom: 6px;
+}
+.sidebar li a ~ span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 45px !important;
+    top: 0;
+    pointer-events: none;
+    z-index: 1;
+    transform-origin: right;
+    transition-duration: 0.35s;
+}
+.sidebar li a:hover ~ span:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    background: #fff; 
+    transform: scaleX(1);
+    transform-origin: right;
+    transition-duration: 0.35s;
+    z-index: 1;
+}
+.sidebar li a:not(:hover) ~ span:after {
+    background: #aef1f8; 
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: 1;
+    transition-duration: 0.35s;
+}
+
+/* content */
+.content {
+    width: calc(100% - var(--sidebarwidth));
+    height: 100%;
 }
