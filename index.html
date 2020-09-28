@@ -16,15 +16,13 @@
             </a>
             <h2 class="sidebartitle">HOLA</h2>
             <p>I'm Peggie</p>
-            <ul>
-                <li><a href="#">123456</a><span></span> </li>
-                <li><a href="#">arqrwrr</a><span></span></li>
-                <li><a href="#">qqqqqqq</a><span></span></li>
-                <li><a href="#">你好喔</a><span></span></li>
-            </ul>
+            <!-- <ul>
+                <li class="active"><a href="#">Portfolio</a><span></span></li>
+                <li><a href="#">About</a><span></span></li>
+            </ul> -->
         </div>
         <div class="content">
-            <h2>Hello ~</h2>
+            <!-- <h2>Hello ~</h2>
             <section class="paper" style="height: 500px;">
                 <p class="title">BLABLA23事</p>
                 <p><span>Design</span><span>UI</span><span>web</span></p>
@@ -37,7 +35,74 @@
             </section>
             <section class="paper" style="height: 500px;">
 
-            </section>
+            </section> -->
+            <div class="paper">
+                <div class="category">
+                    <span class="active" name="all">全部</span>
+                    <span name="web">網站設計</span>
+                    <span name="back">後台系統</span>
+                    <span name="rwd">響應式網頁</span>
+                    <span name="liff">Liff頁</span>
+                    <span name="game">遊戲</span>
+                </div>
+                <section class="items-wrapper">
+                    <div class="item" type="web">
+                        <a href="#">
+                            <div class="img-wrapper">
+                                <img src="./images/sample.jpg" alt="">
+                            </div>    
+                            <div class="text">
+                                <p class="title">BLABLA23事</p>
+                                <small>www</small>
+                            </div> 
+                        </a>
+                    </div>
+                    <div class="item" type="web">
+                        <a href="#">
+                            <div class="img-wrapper">
+                                <img src="./images/sample.jpg" alt="">
+                            </div> 
+                            <div class="text">
+                                <p class="title">BLABLA23事</p>
+                                <small>www</small>
+                            </div> 
+                        </a>
+                    </div>
+                    <div class="item" type="game">
+                        <a href="#">
+                            <div class="img-wrapper">
+                                <img src="./images/sample.jpg" alt="">
+                            </div> 
+                            <div class="text">
+                                <p class="title">BLABLA23事</p>
+                                <small>ggg</small>
+                            </div> 
+                        </a>
+                    </div>
+                    <div class="item" type="game">
+                        <a href="#">
+                            <div class="img-wrapper">
+                                <img src="./images/sample.jpg" alt="">
+                            </div> 
+                            <div class="text">
+                                <p class="title">BLABLA23事</p>
+                                <small>ggg</small>
+                            </div> 
+                        </a>
+                    </div>
+                    <div class="item" type="web">
+                        <a href="#">
+                            <div class="img-wrapper">
+                                <img src="./images/sample.jpg" alt="">
+                            </div> 
+                            <div class="text">
+                                <p class="title">BLABLA23事</p>
+                                <small>wwww</small>
+                            </div> 
+                        </a>
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
 
@@ -45,6 +110,19 @@
     <script>
         $('.menubtn').on('click', function(){
             $('.sidebar').toggleClass('collapse');
+        });
+
+        // filter
+        $(".category span").click(function(){
+            var tname = $(this);
+            var tbind = tname.attr('name');
+            $(".category span").removeClass("active");
+            $(this).addClass("active");
+            $(".item").fadeOut("slow");
+            setTimeout(function(){$(".item[type='" + tbind + "'").fadeIn();}, 500);
+            if(tbind == "all") {
+                setTimeout(function(){$(".item").fadeIn();}, 500);
+            }
         });
     </script>
 </body>
